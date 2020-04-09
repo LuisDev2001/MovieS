@@ -1,0 +1,264 @@
+:root {
+  --rojoClaro: #f55b5b;
+  --borderGrisClaro: #cccccc;
+  --negroClaro:#333333;
+  --blanco: #ffffff;
+  --rojoClaroRGBA: rgba(245, 91, 91,.6);
+  --rojoClaroRGBA_Menu: rgba(255, 73, 73, 0.8);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+/*----HEADER STYLES----*/
+.burgerButton{
+  display: none;
+}
+header {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 10px var(--negroClaro); 
+}
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  color: var(--rojoClaro);
+}
+header form {
+  width: 35%;
+}
+header form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--borderGrisClaro);
+  font-family: 'Open Sans', sans-serif;
+  outline: none
+}
+header .avatar .nameAndImg {
+  display: flex;
+  align-items: center;
+}
+header .avatar span {
+  margin-right: 10px;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+header .avatar .imagen {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 100%;
+  background-image: url('../img/user.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+/*----MAIN STYLES----*/
+main .container {
+  display: grid;
+  grid-template-columns: 5em 1fr;
+  grid-auto-rows: auto;
+  height: 100vh;
+}
+main .container #menu {
+  background-color: var(--rojoClaro);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px;
+}
+main .container #menu .menuItems {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main .container #menu .contentMenu{
+  width: 100%;
+  height: 100%;
+}
+main .container #menu .menuItems:last-child{
+  justify-content: flex-end;
+}
+main .container #menu .menuItems a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--blanco);
+  text-align: center;
+  transition: all .3s ease;
+}
+main .container #menu .menuItems a:hover {
+  color: var(--negroClaro);
+}
+main .container #menu .menuItems a i {
+  font-size: 1.4em;
+}
+main .container .container_peliculas {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .container .container_peliculas h3 {
+  font-size: 1.7em;
+  font-family: 'Roboto', sans-serif;
+  margin: 10px 0;
+}
+main .container .container_peliculas .peliculas{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 0 15px;
+}
+main .container .container_peliculas .peliculas .imgFilmContent {
+  background-image: url('../img/broly.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+  width: 100%;
+  height: 14em;
+  position: relative;
+  box-shadow: 0 0 10px var(--negroClaro);
+}
+main .container .container_peliculas .peliculas .imgFilmContent .infoFilm {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  background-color: var(--rojoClaroRGBA);
+}
+main .container .container_peliculas .peliculas .imgFilmContent .infoFilm h4 {
+  color: var(--blanco);
+  font-size: 1.3em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 5px;
+}
+main .container .container_peliculas .peliculas .imgFilmContent .infoFilm p {
+  color: var(--blanco);
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+main .container .container_peliculas .returnTop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 0 0;
+}
+main .container .container_peliculas .returnTop .arrowUp {
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+main .container .container_peliculas .returnTop .arrowUp i {
+  font-size: 2em;
+  color: var(--rojoClaro);
+  line-height: 40px;
+}
+.closeMenu{
+  display: none;
+}
+/*---RESPONSIVE DESING---*/
+/*TABLET H*/
+@media screen and (max-width: 1024px) {
+  main .container .container_peliculas .peliculas{
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .container .container_peliculas .peliculas{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  header {
+    height: 10em;
+    flex-direction: column;
+  }
+  header form {
+    width: 90%;
+  }
+  main .container .container_peliculas .peliculas .imgFilmContent {
+    background-position: center;
+  }
+}
+@media screen and (max-width: 480px) {
+/* ------------------------------ burger button ----------------------------- */
+  .burgerButton{
+    display: block;
+    width: auto;
+    height: auto;
+  }
+  .burgerButton i {
+    font-size: 1.3em;
+    color: var(--negroClaro);
+  }
+/* ---------------------------- header responsive --------------------------- */
+  header .avatar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+  }
+/* ----------------------------- main responsive ---------------------------- */
+  main .container {
+    grid-template-columns: 1fr;
+  }
+  main .container #menu {
+    position: fixed;  
+    z-index: 10;
+    top: 0;
+    left: -30em; /*-30em*/
+    padding: 0;
+    background-color: var(--rojoClaroRGBA_Menu);
+  }
+  main .container #menu .menuItems a {
+    flex-direction: row; 
+    padding: 15px;
+    border-bottom: 1px solid var(--blanco);
+  }
+  main .container #menu .menuItems a:first-child {
+    border-top: 1px solid var(--blanco);
+  }
+  main .container #menu .menuItems a i {
+    margin-right: 15px;
+  }
+  main .container .container_peliculas .peliculas{
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+  /* ---------------------------------- menu ---------------------------------- */
+  main .container #menu .closeMenu{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 15px;
+  }
+  main .container #menu .closeMenu i {
+    font-size: 30px;
+    color: var(--blanco);
+  }
+  main .container #menu .contentMenu{
+    height: 100vh;
+  }
+  main .container #menu .menuItems {
+    height: auto;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .container .container_peliculas .peliculas .imgFilmContent {
+    background-position: 40% 0;
+    height: 20em;
+  }
+}
