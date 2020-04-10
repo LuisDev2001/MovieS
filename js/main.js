@@ -20,3 +20,20 @@ const closeButton = document.querySelector('main .container #menu .closeMenu i')
 closeButton.addEventListener('click', () => {
   menu.style.left = '-30em';
 });
+/* ----------------------------- account options ---------------------------- */
+const btnShowAcount = document.querySelector('header .avatar .nameAndImg #showAcount');
+const accountOption = document.querySelector('header .avatar .nameAndImg .accountOption');
+btnShowAcount.addEventListener('click', () => {
+  if(accountOption.style.opacity === '1')
+  {
+    accountOption.style.opacity = '0';
+    accountOption.style.visibility = 'hidden';
+    accountOption.style.pointerEvents = 'none';
+  }
+  else
+  {
+    accountOption.style.opacity = '1';
+    accountOption.style.visibility = 'visible';
+    accountOption.style.pointerEvents = 'initial';
+  }
+});

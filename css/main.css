@@ -5,6 +5,7 @@
   --blanco: #ffffff;
   --rojoClaroRGBA: rgba(245, 91, 91,.6);
   --rojoClaroRGBA_Menu: rgba(255, 73, 73, 0.8);
+  --GrisClaro: #e2e2e2;
 }
 * {
   padding: 0;
@@ -13,6 +14,9 @@
 }
 a {
   text-decoration: none;
+}
+li {
+  list-style: none;
 }
 /*----HEADER STYLES----*/
 .burgerButton{
@@ -44,6 +48,64 @@ header form input[type="text"] {
 header .avatar .nameAndImg {
   display: flex;
   align-items: center;
+  position: relative;
+}
+/* ----------------------------- account option ----------------------------- */
+header .avatar .nameAndImg #showAcount {
+  margin-left: 10px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background: none;
+  display: inline-block;
+}
+header .avatar .nameAndImg #showAcount:hover i {
+  color: var(--rojoClaro);
+}
+header .avatar .nameAndImg #showAcount i {
+  font-size: 2em;
+  color: var(--negroClaro);
+  transition: .25s ease;
+}
+header .avatar .nameAndImg .accountOption {
+  position: absolute;
+  z-index: 11;
+  top: 130%;
+  width: 100%;
+  background-color: var(--blanco);
+  border: 1px solid var(--borderGrisClaro);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .25s ease;
+}
+header .avatar .nameAndImg .accountOption ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+header .avatar .nameAndImg .accountOption ul li {
+  width: inherit;
+  display: flex;
+  align-items: center;
+}
+header .avatar .nameAndImg .accountOption ul li a {
+  color: var(--negroClaro);
+  display: flex;
+  align-items: center;
+  width: inherit;
+  padding: 10px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid var(--borderGrisClaro);
+  transition: .25s ease;
+}
+header .avatar .nameAndImg .accountOption ul li a:hover {
+  background-color: var(--GrisClaro);
+}
+header .avatar .nameAndImg .accountOption ul li a i {
+  margin-left: 5px;
+  font-size: 14px;
 }
 header .avatar span {
   margin-right: 10px;
@@ -67,6 +129,7 @@ main .container {
   grid-auto-rows: auto;
   height: 100vh;
 }
+/* ------------------------------- menu styles ------------------------------ */
 main .container #menu {
   background-color: var(--rojoClaro);
   display: flex;
@@ -104,6 +167,7 @@ main .container #menu .menuItems a:hover {
 main .container #menu .menuItems a i {
   font-size: 1.4em;
 }
+/* ---------------------------------- films styles --------------------------------- */
 main .container .container_peliculas {
   padding: 20px;
   width: 100%;
@@ -191,6 +255,9 @@ main .container .container_peliculas .returnTop .arrowUp i {
   }
   main .container .container_peliculas .peliculas .imgFilmContent {
     background-position: center;
+  }
+  header .avatar .nameAndImg .accountOption {
+    top: 118%;
   }
 }
 @media screen and (max-width: 480px) {
